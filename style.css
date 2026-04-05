@@ -200,7 +200,6 @@
     border: 1px solid rgba(140,0,255,.25);
     border-radius: 20px;
     padding: 36px 32px;
-    position: sticky;
     top: 80px;
   }
 
@@ -212,13 +211,14 @@
     text-transform: uppercase;
     padding: 4px 14px;
     border-radius: 999px;
-    margin-bottom: 16px;
   }
 
   .antes-tag {
     background: rgba(255, 80, 80, .15);
     color: #ff7070;
     border: 1px solid rgba(255, 80, 80, .3);
+    display: block;
+    text-align: center;
   }
 
   .depois-tag {
@@ -226,17 +226,8 @@
     color: #50ff8c;
     border: 1px solid rgba(80, 255, 140, .3);
     display: block;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     text-align: center;
-  }
-
-  .antes-titulo {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: #fff;
-    margin-bottom: 20px;
-    line-height: 1.35;
   }
 
   .antes-lista {
@@ -249,7 +240,10 @@
   }
 
   .antes-lista li {
-    font-size: .92rem;
+    font-family: 'Syne', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1.35;
     color: rgba(255,255,255,.72);
     padding-left: 24px;
     position: relative;
@@ -262,14 +256,6 @@
     left: 0;
     color: #ff7070;
     font-weight: 700;
-  }
-
-  .antes-rodape {
-    font-size: .8rem;
-    color: rgba(255,255,255,.35);
-    margin: 0;
-    border-top: 1px solid rgba(255,255,255,.08);
-    padding-top: 16px;
   }
 
   .depois-bloco {
