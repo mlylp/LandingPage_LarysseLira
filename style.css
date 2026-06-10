@@ -520,5 +520,57 @@
     .float-wa { bottom: 18px; right: 18px; width: 52px; height: 52px; font-size: 1.4rem; }
   }
 
+  /* ─── E-COMMERCE: IMAGENS NA GALERIA ───────────── */
+  .ecom-grid-img {
+    aspect-ratio: 4/3;
+    border-radius: 10px;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
   /* número animado */
   .count-up { display: inline-block; }
+
+  /* ─── CASE SWITCHER ─────────────────────────────── */
+  .case-switcher { padding: 70px 5% 0; text-align: center; }
+  .case-switcher-label {
+    font-size: .8rem; color: rgba(255,255,255,.45);
+    text-transform: uppercase; letter-spacing: 3px; margin-bottom: 22px;
+  }
+  .switch-group {
+    display: inline-flex; gap: 8px; flex-wrap: wrap; justify-content: center;
+    background: rgba(255,255,255,.04); border: 1px solid rgba(140,0,255,.2);
+    padding: 8px; border-radius: 50px;
+  }
+  .switch-btn {
+    font-family: 'Syne', sans-serif; font-weight: 700; font-size: .95rem;
+    padding: 14px 28px; border-radius: 40px; border: none; cursor: pointer;
+    background: transparent; color: rgba(255,255,255,.6);
+    transition: all .25s;
+  }
+  .switch-btn.active {
+    background: linear-gradient(135deg, var(--roxo-escuro), var(--roxo-vibrante));
+    color: #fff; box-shadow: 0 8px 24px rgba(140,0,255,.4);
+  }
+  .switch-btn:hover:not(.active) { color: #fff; }
+
+  /* ─── CASE BLOCKS ────────────────────────────────── */
+  .case-block { display: none; }
+  .case-block.active { display: block; }
+
+  /* ─── E-COMMERCE: SERVIÇOS COM GALERIA ──────────── */
+  .ecom-serv-card {
+    background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.08);
+    border-radius: 22px; overflow: hidden; margin-bottom: 24px;
+    transition: border-color .25s;
+  }
+  .ecom-serv-card:hover { border-color: rgba(140,0,255,.4); }
+  .ecom-serv-card-header { padding: 28px 28px 18px; }
+  .ecom-serv-card-header h3 {
+    font-family: 'Syne', sans-serif; font-size: 1.4rem; font-weight: 700; margin-bottom: 8px;
+    text-align: center;
+  }
+  .ecom-serv-card-header p { font-size: .88rem; color: rgba(255,255,255,.55); line-height: 1.6; text-align: center; }
+  .ecom-images { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; padding: 0 6px 6px; }
