@@ -23,7 +23,10 @@
   .foto{
     border-radius: 25%;
     border-style: double;
+    cursor: zoom-in;
+    transition: opacity .25s;
   }
+  .foto:hover { opacity: .85; }
 
   /* ─── NAV ─────────────────────────────────────── */
   nav {
@@ -270,7 +273,10 @@
     display: block;
     border-radius: 10px;
     border: 1px solid rgba(140,0,255,.2);
+    cursor: zoom-in;
+    transition: opacity .25s;
   }
+  .resultados-obtidos:hover { opacity: .85; }
 
   @media (max-width: 768px) {
     .antes-depois {
@@ -524,10 +530,20 @@
   .modal-content {
     position: relative;
     max-width: 90vw; max-height: 90vh;
+    overflow: auto;
   }
   .modal-content img {
-    max-width: 100%; max-height: 100%;
+    max-width: 100%; max-height: 90vh;
     border-radius: 12px;
+    display: block;
+    cursor: zoom-in;
+    transition: transform .3s ease;
+    transform-origin: center;
+  }
+  .modal-content img.zoomed {
+    max-width: none; max-height: none;
+    transform: scale(2);
+    cursor: zoom-out;
   }
   .modal-close {
     position: absolute; top: 20px; right: 20px;
@@ -587,6 +603,45 @@
     color: #fff; box-shadow: 0 8px 24px rgba(140,0,255,.4);
   }
   .switch-btn:hover:not(.active) { color: #fff; }
+
+  /* ─── SEGMENT SWITCHER (retângulos) ─────────────── */
+  .segment-switcher {
+    display: flex; gap: 24px; flex-wrap: wrap; justify-content: center;
+    max-width: 900px; margin: 0 auto;
+  }
+  .case-block .segment-switcher { margin-top: 56px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,.08); }
+  .segment-card {
+    position: relative; flex: 1 1 320px; max-width: 380px;
+    height: 200px; border-radius: 20px; overflow: hidden; cursor: pointer;
+    border: 1px solid rgba(140,0,255,.25);
+    transition: transform .25s, border-color .25s, box-shadow .25s;
+  }
+  .segment-card:hover { transform: translateY(-4px); border-color: rgba(140,0,255,.6); box-shadow: 0 12px 30px rgba(140,0,255,.25); }
+  .segment-card img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+    transition: transform .35s;
+  }
+  .segment-card:hover img { transform: scale(1.06); }
+  .segment-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(10,4,20,.15) 0%, rgba(10,4,20,.85) 100%);
+  }
+  .segment-card h3 {
+    position: absolute; left: 20px; right: 20px; bottom: 18px;
+    font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.15rem;
+    color: #fff; margin: 0;
+  }
+  .segment-card.active {
+    border-color: var(--roxo-vibrante);
+    box-shadow: 0 0 0 3px rgba(140,0,255,.35), 0 12px 30px rgba(140,0,255,.3);
+  }
+  .segment-card.active::after {
+    content: "✕ Fechar";
+    position: absolute; top: 14px; right: 14px;
+    font-family: 'DM Sans', sans-serif; font-size: .75rem; font-weight: 500;
+    color: #fff; background: rgba(140,0,255,.55);
+    padding: 5px 12px; border-radius: 20px;
+  }
 
   /* ─── CASE BLOCKS ────────────────────────────────── */
   .case-block { display: none; }
