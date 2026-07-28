@@ -40,7 +40,7 @@
 
 <!-- CASE SWITCHER -->
 <section class="case-switcher" id="case-switcher">
-  <p class="case-switcher-label">Veja meus resultados por segmento</p>
+  <p class="case-switcher-label">Clique e veja meus resultados por segmento</p>
   <div class="segment-switcher" id="segmentSwitcher">
     <div class="segment-card" data-target="case-local">
       <img src="./assets/google-maps.png" alt="Negócios Locais">
@@ -523,6 +523,8 @@
   function removeBottomSwitcher() {
     const existing = document.getElementById(BOTTOM_SWITCHER_ID);
     if (existing) existing.remove();
+    const existingLabel = document.getElementById(BOTTOM_SWITCHER_ID + 'Label');
+    if (existingLabel) existingLabel.remove();
   }
 
   function openSegment(id) {
@@ -531,6 +533,12 @@
     const target = document.getElementById(id);
     target.classList.add('active');
     syncActiveState(id);
+
+    const bottomLabel = document.createElement('p');
+    bottomLabel.className = 'case-switcher-label';
+    bottomLabel.id = BOTTOM_SWITCHER_ID + 'Label';
+    bottomLabel.textContent = 'Clique e veja meus resultados por segmento';
+    target.appendChild(bottomLabel);
 
     const bottomSwitcher = segmentSwitcher.cloneNode(true);
     bottomSwitcher.id = BOTTOM_SWITCHER_ID;

@@ -584,8 +584,12 @@
   /* ─── CASE SWITCHER ─────────────────────────────── */
   .case-switcher { padding: 70px 5% 0; text-align: center; }
   .case-switcher-label {
-    font-size: .8rem; color: rgba(255,255,255,.45);
-    text-transform: uppercase; letter-spacing: 3px; margin-bottom: 22px;
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2.4rem, 5.5vw, 4rem);
+    font-weight: 800; line-height: 1.1;
+    letter-spacing: -1.5px;
+    color: rgba(255,255,255,.85);
+    margin-bottom: 22px;
   }
   .switch-group {
     display: inline-flex; gap: 8px; flex-wrap: wrap; justify-content: center;
@@ -610,6 +614,7 @@
     max-width: 900px; margin: 0 auto;
   }
   .case-block .segment-switcher { margin-top: 56px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,.08); }
+  .case-block .case-switcher-label { text-align: center; }
   .segment-card {
     position: relative; flex: 1 1 320px; max-width: 380px;
     height: 200px; border-radius: 20px; overflow: hidden; cursor: pointer;
